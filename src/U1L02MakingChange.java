@@ -10,24 +10,26 @@ public class U1L02MakingChange {
 		int numNickel = 0;
 		int numPenny = 0;
 		JOptionPane.showMessageDialog(null, "Welcome to Making Change!");
-		String number = JOptionPane.showInputDialog("Enter a monetary value: ");
-		int money = Integer.parseInt(number);
-		int origMoney = money;
-		while(money > 0.25) {
-			money -= 0.25;
-			numQuarter +=1;
+		String number = JOptionPane.showInputDialog("Enter a monetary value (ex. 1.56): ");
+		double money = Double.parseDouble(number);
+		numPenny = (int)(money*100);
+		while(numPenny >= 25) {
+			numQuarter++;
+			numPenny -= 25;
+			
 		}
-		while(money > 0.1) {
-			money -= 0.1;
-			numDime += 1;
+		while(numPenny >= 10) {
+			numDime++;
+			numPenny -= 10;
+			
 		}
-		while(money > 0.05) {
-			money -= 0.05;
-			numNickel += 1;
+		while(numPenny >= 5) {
+			numNickel++;
+			numPenny -= 5;
+			
 		}
-		numPenny = money*100;
 		JOptionPane.showMessageDialog(null,"There are "+numQuarter+" quarters, "+numDime+" dimes, "
-				+ numNickel+" nickels, and "+numPenny+" pennies in "+origMoney+".");
+				+ numNickel+" nickels, and "+numPenny+" pennies in "+money+".");
 
 
 	}
