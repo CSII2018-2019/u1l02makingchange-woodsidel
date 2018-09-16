@@ -29,7 +29,7 @@ public class U1L02MakingChange {
 			
 		}
 		JOptionPane.showMessageDialog(null,"There are "+numQuarter+" quarters, "+numDime+" dimes, "
-				+ numNickel+" nickels, and "+numPenny+" pennies in "+money+".");
+				+ numNickel+" nickels, and "+numPenny+" pennies in $"+money+".");
 
 
 	}
